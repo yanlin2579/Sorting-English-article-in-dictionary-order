@@ -3,6 +3,11 @@
 #include <time.h>
 #include <Windows.h>
 
+/*注释：
+**1.编译平台Visual studio 2019，部分语句与纯C调用方式有差异
+**2.与纯C有差异的语句：scanf_s("%d",&变量)、fopen_s(&文件指针, "文件目录", "打开方式")
+*/
+
 /*——————求字符串长度函数——————*/
 int StrLength(char r[])
 {
@@ -245,7 +250,6 @@ int CrtSortText(char* r[], int num)
     printf("          ------------------------------------------------------------------------------------\n");
     printf("          排序结束，正在生成排序后的文章中...");
 
-    srand((unsigned)time(NULL));
     fopen_s(&fp, "TextSort_2.txt ", "wt");
     for (i = 1; i <= num; ++i)
     {
